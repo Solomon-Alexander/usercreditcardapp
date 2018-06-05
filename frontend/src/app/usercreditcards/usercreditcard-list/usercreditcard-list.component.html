@@ -1,0 +1,30 @@
+<div class="col-md-4" style="padding-bottom:20px">
+  <input id="inputfilter" type="text" class="form-control" placeholder="Search based on Card Types..." />
+</div>
+
+<table id="confTable" class="table table-sm table-hover">
+  <tr>
+    <th>Card Number</th>
+    <th>Card Type</th>
+    <th>CardHolder Name</th>
+    <th>Card Nickname</th>
+    <th>User ID</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let userCreditCard of userCreditCardService.userCreditCardList" (click)="showForEdit(userCreditCard)">
+    <td>{{userCreditCard.cardNumber}}</td>
+    <td>{{userCreditCard.cardType}}</td>
+    <td>{{userCreditCard.cardHolderName}}</td>
+    <td>{{userCreditCard.cardNickName}}</td>
+    <td>{{userCreditCard.userID}}</td>
+    <td>
+      <a class="btn" (click)="showForEdit(userCreditCard)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      <a class="btn text-danger" (click)="onDelete(userCreditCard.id)">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </td>
+  </tr>
+  <tr></tr>
+</table>

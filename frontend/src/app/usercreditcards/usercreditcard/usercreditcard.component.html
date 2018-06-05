@@ -1,0 +1,43 @@
+<form class="conf-form" #UserCreditCardForm="ngForm" (ngSubmit)="onSubmit(UserCreditCardForm)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="userCreditCardService.selectedUserCreditCard.id">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Card Number</label>
+      <input class="form-control" name="cardNumber" minlength="16" maxlength="16" #name="ngModel" [(ngModel)]="userCreditCardService.selectedUserCreditCard.cardNumber" placeholder="Card Number"
+        required>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Card Type</label>
+      <input class="form-control" name="cardType" #cardType="ngModel" [(ngModel)]="userCreditCardService.selectedUserCreditCard.cardType" placeholder="Card Type"
+        required>
+      <div class="validation-error" *ngIf="cardType.invalid && cardType.touched">This Field is Required.</div>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Card HolderName</label>
+      <input class="form-control" name="cardHolderName" #cardHolderName="ngModel" [(ngModel)]="userCreditCardService.selectedUserCreditCard.cardHolderName" placeholder="Card HolderName"
+        required appRestrictinput ="words">
+      <div class="validation-error" *ngIf="cardHolderName.invalid && cardHolderName.touched">This Field is Required.</div>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Card NickName</label>
+      <input class="form-control" name="cardNickName" #cardNickName="ngModel" [(ngModel)]="userCreditCardService.selectedUserCreditCard.cardNickName" placeholder="Card NickName"
+        required>
+      <div class="validation-error" *ngIf="cardNickName.invalid && cardNickName.touched">This Field is Required.</div>
+    </div>
+    <div class="form-group col-md-6">
+      <label>User ID</label>
+      <input class="form-control" name="userID" #name="ngModel" [(ngModel)]="userCreditCardService.selectedUserCreditCard.userID" placeholder="User ID"
+        required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <button [disabled]="!UserCreditCardForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
+        <i class="fa fa-floppy-o"></i> Save</button>
+    </div>
+    <div class="form-group col-md-4">
+      <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(UserCreditCardForm)">
+        <i class="fa fa-repeat"></i> Reset</button>
+    </div>
+  </div>
+</form>
