@@ -1,0 +1,52 @@
+Create a REST API to persist credit card information for a user.
+    a. Write a stateless service in the same api, available on a specific end point, that returns the credit card type 
+	( Visa/ Mastercard /Amex /Diners...) based on the first 6 characters of the card number.   
+    b. When storing the card details include the credit card type using this service, and a card nick name (optional).
+    c. Include Creation, retrieval (Based on card nickname, card type, card holder name, card id) update and deletion of records.
+
+2. Create a webpage using AngularJS(version 4 or above) to use the above written REST API to add, list, update and delete the card details. Examples below.
+        bin, cardtype, cardsubtype
+        455561, VISA,DEBIT
+        387765, AMEX,CREDIT
+        454545, VISA, CREDIT
+        546626, MC,CREDIT
+
+-Include a some form of persistence
+-Assume a userid is available where required. No active session validation is required
+- Presentable UI 
+-Spend at most 8hrs
+-It is ok not have all the tasks completed, however what ever is completed should be working, tested and documented along with any assumptions made.  
+
+CREATE TABLE USER_CREDIT_CARD(
+   ID INT NOT NULL AUTO_INCREMENT,
+   CARD_NUMBER BIGINT NOT NULL,
+   CARD_TYPE VARCHAR(40) NOT NULL,
+   CARD_HOLDER_NAME VARCHAR(50),
+   CARD_NICK_NAME  VARCHAR(25),
+   USER_ID INT NOT NULL,
+   PRIMARY KEY ( ID ),
+   FOREIGN KEY (USER_ID)
+      REFERENCES USER(ID)
+);
+
+CREATE TABLE USER(
+   ID INT NOT NULL AUTO_INCREMENT,
+   FIRST_NAME VARCHAR(50),
+   LAST_NAME VARCHAR(50),
+   PHONE VARCHAR(50),
+   EMAIL VARCHAR(50),
+   PRIMARY KEY ( ID )
+);
+
+INSERT INTO USER VALUES (1,'Solomon','Alexander','0416182877','solomonprathap@gmail.com');
+INSERT INTO USER VALUES (2,'Abraham','Thorpe','0416182855','abrahamthorpe@gmail.com');
+INSERT INTO USER VALUES (3,'Denny','Wang','0416182811','dennywang@gmail.com');
+INSERT INTO USER VALUES (4,'Ken','Edwards','04161828833','kenedwards@gmail.com');
+INSERT INTO USER VALUES (5,'Mark','Spencer','0416182899','markspencer@gmail.com');
+
+INSERT INTO USER_CREDIT_CARD VALUES (1,1234567812345678,'AMEX','Solomon Alexander','Solomon',1);
+INSERT INTO USER_CREDIT_CARD VALUES (2,4155567812345612,'MC','Mark Spencer','Mark',5);
+
+
+[{"id":2,"cardNumber":4155567812345612,"cardType":"MC","cardHolderName":"Mark Spencer","cardNickName":"Mark","userID":5}]
+
