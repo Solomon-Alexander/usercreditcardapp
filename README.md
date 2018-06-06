@@ -30,9 +30,9 @@ mvn spring-boot:run
 ## Angular
 Prerequisites:
 
-* Install the stable version of latest Node JS
+* Install the stable version of latest Node JS.
 
-Install the angular CLI globally: npm install -g @angular/cli
+* Install the angular CLI globally at the project root level: npm install -g @angular/cli
 
 On the package.json directory for angular run in order :
 Go to front end folder
