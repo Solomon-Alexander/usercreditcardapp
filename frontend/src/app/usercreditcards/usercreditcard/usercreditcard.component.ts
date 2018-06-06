@@ -13,6 +13,12 @@ export class UserCreditCardComponent implements OnInit {
 
   constructor(private userCreditCardService: UserCreditCardService, private toastr: ToastrService) { }
 
+  public cardTypes = [
+    { value: 'AMEX', display: 'AMEX' },
+    { value: 'VISA', display: 'VISA' },
+    { value: 'MC', display: 'MC' }
+];
+
   ngOnInit() {
     this.resetForm();
   }
@@ -24,7 +30,7 @@ export class UserCreditCardComponent implements OnInit {
     this.userCreditCardService.selectedUserCreditCard = {
       id: null,
       cardNumber: null,
-      cardType: '',
+      cardType: this.cardTypes[0].value,
       cardHolderName: '',
       cardNickName: '',
       userID: null

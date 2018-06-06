@@ -7,10 +7,10 @@
         required>
     </div>
     <div class="form-group col-md-6">
-      <label>Card Type</label>
-      <input class="form-control" name="cardType" #cardType="ngModel" [(ngModel)]="userCreditCardService.selectedUserCreditCard.cardType" placeholder="Card Type"
-        required>
-      <div class="validation-error" *ngIf="cardType.invalid && cardType.touched">This Field is Required.</div>
+      <label>Type</label>
+      <select name="cardType" class="form-control" [(ngModel)]="userCreditCardService.selectedUserCreditCard.cardType">
+        <option *ngFor="let cardType of cardTypes" [value]="cardType.value">{{cardType.display}}</option>
+      </select>
     </div>
     <div class="form-group col-md-6">
       <label>Card HolderName</label>
