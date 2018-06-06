@@ -32,7 +32,7 @@ Prerequisites:
 
 * Install the stable version of latest Node JS
 
-* Install the following globally
+Install the following globally:
 
 * npm install -g @angular/cli
 
