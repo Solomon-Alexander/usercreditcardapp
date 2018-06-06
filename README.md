@@ -32,11 +32,7 @@ Prerequisites:
 
 * Install the stable version of latest Node JS
 
-Install the following globally:
-
-* npm install -g @angular/cli
-
-* npm install -g @angular/platform-browser@latest --save
+Install the angular CLI globally: npm install -g @angular/cli
 
 On the package.json directory for angular run in order :
 Go to front end folder
