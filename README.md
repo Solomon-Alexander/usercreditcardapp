@@ -1,12 +1,10 @@
-User Credit Card App
 
-![angular4](https://user-images.githubusercontent.com/21153996/34914355-30622e76-f922-11e7-99f8-12b8e51495da.PNG)
 
-# Angular 4 Frontend
+# User Credit Card App - Angular 4 Frontend
 
 This project was generated to make user credit card CRUD operations via ANGULAR 4.
 
-## SpringBootCrudApi
+## User Credit Card App - SpringBoot backend
 
 RestFul Service uses following Technologies:
 
@@ -31,10 +29,14 @@ mvn spring-boot:run
 
 ## Angular
 Prerequisites:
-Install the stable version of latest Node JS
-Install the following globally
-npm install -g @angular/cli
-npm install -g @angular/platform-browser@latest --save
+
+* Install the stable version of latest Node JS
+
+Install the following globally:
+
+* npm install -g @angular/cli
+
+* npm install -g @angular/platform-browser@latest --save
 
 On the package.json directory for angular run in order :
 Go to front end folder
