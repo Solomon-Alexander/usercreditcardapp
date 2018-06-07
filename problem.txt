@@ -31,6 +31,7 @@ CREATE TABLE USER_CREDIT_CARD(
 
 CREATE TABLE USER(
    ID INT NOT NULL AUTO_INCREMENT,
+   USER_NAME VARCHAR(15) NOT NULL,
    FIRST_NAME VARCHAR(50),
    LAST_NAME VARCHAR(50),
    PHONE VARCHAR(50),
@@ -38,15 +39,29 @@ CREATE TABLE USER(
    PRIMARY KEY ( ID )
 );
 
-INSERT INTO USER VALUES (1,'Solomon','Alexander','0416182877','solomonprathap@gmail.com');
-INSERT INTO USER VALUES (2,'Abraham','Thorpe','0416182855','abrahamthorpe@gmail.com');
-INSERT INTO USER VALUES (3,'Denny','Wang','0416182811','dennywang@gmail.com');
-INSERT INTO USER VALUES (4,'Ken','Edwards','04161828833','kenedwards@gmail.com');
-INSERT INTO USER VALUES (5,'Mark','Spencer','0416182899','markspencer@gmail.com');
+INSERT INTO USER VALUES (1,'alexanders','Solomon','Alexander','0416182877','solomonprathap@gmail.com');
+INSERT INTO USER VALUES (2,'thorpea','Abraham','Thorpe','0416182855','abrahamthorpe@gmail.com');
+INSERT INTO USER VALUES (3,'wangd','Denny','Wang','0416182811','dennywang@gmail.com');
+INSERT INTO USER VALUES (4,'edwardsk','Ken','Edwards','04161828833','kenedwards@gmail.com');
+INSERT INTO USER VALUES (5,'spencerm','Mark','Spencer','0416182899','markspencer@gmail.com');
 
 INSERT INTO USER_CREDIT_CARD VALUES (1,1234567812345678,'AMEX','Solomon Alexander','Solomon',1);
 INSERT INTO USER_CREDIT_CARD VALUES (2,4155567812345612,'MC','Mark Spencer','Mark',5);
 
 
-[{"id":2,"cardNumber":4155567812345612,"cardType":"MC","cardHolderName":"Mark Spencer","cardNickName":"Mark","userID":5}]
+[{"id":2,"cardNumber":4155567812345612,"cardType":"MC","cardHolderName":"Mark Spencer1","cardNickName":"Mark","userID":5}]
 
+npm install -g @angular/cli --save
+npm install @angular/animations@latest --save
+
+npm install @angular/platform-browser@latest --save
+  
+npm install @angular/animations@4.4.6 --save
+npm install @angular/platform-browser@4.4.6 --save
+ 
+@angular/animations@4.4.6
+"@angular/platform-browser@4.4.6
+
+<!--<select name="userID" class="form-control" [(ngModel)]="userCreditCardService.selectedUserCreditCard.userID">
+	<option *ngFor="let userName of userNames" [value]="userName[0]">{{userName[1]}}</option>
+</select> -->

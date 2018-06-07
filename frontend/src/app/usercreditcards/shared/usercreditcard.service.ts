@@ -5,12 +5,14 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
 import { UserCreditCard } from './usercreditcard.model';
+import { User } from './user.model';
 
 @Injectable()
 export class UserCreditCardService {
 
   selectedUserCreditCard: UserCreditCard;
   userCreditCardList: UserCreditCard[];
+  userList: User[];
   constructor(private http: Http) { }
 
   postUserCreditCard(conf: UserCreditCard) {
@@ -33,6 +35,12 @@ export class UserCreditCardService {
         return data.json() as UserCreditCard[];
       }).toPromise().then(x => {
         this.userCreditCardList = x;
+      });
+  }
+  getUserList() {
+    return this.http.get('http://localhost:8081/api/ang/users')
+      .map((data: Response) => {
+            return data.json() as User[];
       });
   }
   deleteUserCreditCard(id: number) {

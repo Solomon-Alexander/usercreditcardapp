@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 
 import { UserCreditCardService } from '../shared/usercreditcard.service';
 import { ToastrService } from 'ngx-toastr';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Component({
   selector: 'app-usercreditcard',
@@ -19,14 +20,20 @@ export class UserCreditCardComponent implements OnInit {
     { value: 'MC', display: 'MC' }
 ];
 
+  userNames = Array<UserName>();
+
   ngOnInit() {
     this.resetForm();
-  }
+    this.userNames = Array<UserName>();
+   }
 
   resetForm(form?: NgForm) {
     if (form != null) {
       form.reset();
     }
+     this.userCreditCardService.getUserList().subscribe(data => {
+      data.map(a => this.userNames.push(new UserName(a.id, a.userName)));
+    });
     this.userCreditCardService.selectedUserCreditCard = {
       id: null,
       cardNumber: null,
@@ -54,4 +61,15 @@ export class UserCreditCardComponent implements OnInit {
         });
     }
   }
+}
+
+export class UserName {
+    id: number;
+    name: string;
+
+    constructor(id: number, name: string) {
+        this.id = id;
+        this.name = name;
+    }
+
 }

@@ -17,7 +17,7 @@ import com.demo.usercreditcard.api.exception.MissingMandatoryFieldException;
 import com.demo.usercreditcard.api.types.RequestStatus;
 
 /**
- * @author enes.acikoglu
+ * @author Solomon Alexander
  */
 @RestControllerAdvice
 public class ControllerExceptionHandler {
