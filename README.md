@@ -1,5 +1,3 @@
-
-
 # User Credit Card App - Angular 4 Frontend
 
 This project was generated to make user credit card CRUD operations via ANGULAR 4.
@@ -8,24 +6,26 @@ This project was generated to make user credit card CRUD operations via ANGULAR 
 
 RestFul Service uses following Technologies:
 
+* Java 8
 * Spring-boot
 * Hibernate
 * JaCoCo
-* MySQL DB
+* MySQL DB 8.0
 * Swagger2
 
 ## Build
 
 Run mvn clean install
 
-## Run 
+## Run
 
-First run SpringBootCrudApi then run Angular4 project.
+First run backend then run frontend Angular4 project.
 
 ## SpringBootService
-
+Navigate to backend folder
 Run the following to kickstart springboot.
 mvn spring-boot:run
+For building the artifacts (i.e jar) use this: mvn clean install
 
 ## Angular
 Prerequisites:

@@ -32,6 +32,7 @@ export class UserCreditCardComponent implements OnInit {
       form.reset();
     }
      this.userCreditCardService.getUserList().subscribe(data => {
+      this.userNames = Array<UserName>();
       data.map(a => this.userNames.push(new UserName(a.id, a.userName)));
     });
     this.userCreditCardService.selectedUserCreditCard = {
